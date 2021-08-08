@@ -2,9 +2,13 @@ import re
 
 def pekofy(words):
     """
-    What pekofy does is pekofy sentences that aren't pekofied
+    Pekofies sentences, including ones that are already pekofied. Pekofication occurs on any [.!?]. On empty input, outputs PE↗KO↘ PE↗KO↘ PE↗KO↘.
 
-    Peko!
+    Inputs:
+        words (str) - string containing the message to be pekofied.
+
+    Output:
+        (str) - pekofied string.
 
     """
     
