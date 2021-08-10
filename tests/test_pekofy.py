@@ -5,7 +5,7 @@ class TestPeko(unittest.TestCase):
     def test_with_input(self):
         puncs = ['.', '!', '?', '. ', '! ', '? ', ' ']
         for i in puncs:
-            self.assertEqual(pekofy('hello world' + i), 
+            self.assertEqual(pekofy.pekofy('hello world' + i), 
                             'hello world {}{}'.format('peko', i))
 
 if __name__ == '__main__':
