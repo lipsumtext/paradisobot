@@ -12,7 +12,7 @@ def pekofy(words):
 
     """
     
-    punc = ['.','!','?','']
+    punc = ['.','!','?','',' ']
     orig_sentences = str(words)
     if orig_sentences != "":
         temp_list = re.split("([.?!])", orig_sentences)
@@ -21,5 +21,6 @@ def pekofy(words):
         return peko
     else:
         return "PE↗KO↘ PE↗KO↘ PE↗KO↘"
+
 
 
