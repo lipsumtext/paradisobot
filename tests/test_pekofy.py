@@ -7,6 +7,8 @@ class TestPeko(unittest.TestCase):
         for i in puncs:
             self.assertEqual(pekofy.pekofy('hello world' + i), 
                             'hello world {}{}'.format('peko', i))
+    def test_no_input(self):
+        self.assertEqual(pekofy.pekofy(''), "PE↗KO↘ PE↗KO↘ PE↗KO↘")
 
 if __name__ == '__main__':
     unittest.main()
