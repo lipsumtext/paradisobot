@@ -12,7 +12,7 @@ def copypasta(cp_name):
     """
 
     try:
-        cp = open('copypastas/{}.txt'.format(cp_name), 'r')
+        cp = open('copypastas/{}.txt'.format(cp_name.strip()), 'r')
         return cp.read()
     except IOError:
         return "Copypasta does not exist"
