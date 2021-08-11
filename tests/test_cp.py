@@ -9,7 +9,7 @@ class TestCp(unittest.TestCase):
 
 
     def test_cp_marine(self):
-        synonymM = ['marine_ass', 'marine_butt']
+        synonymM = ['marineass', 'marinebutt']
         for i in synonymM:
             self.assertEqual(paradisobot.copypasta(i), """ I don't think you would understand this. But my butt is really big, it's like "What happened to this?" To explain just how big it is. If i were to take a fall that would break a normal person's bones my butt will absorb all the damage. My bones would be completely fine. It will only end with a single bruise. My butt is the absolute strongest. It's very sturdy, the muscle is so thick. To explain just how thick it is... In my head, i think of myself as having a hitbox and i walk based on that. But while i walk, my butt sways left and right. It's not like it's swaying because i'm trying to shake it. It's just so big it moves on its own and it just becomes a shaky mess. I don`t intent to shake it, i don't mean to walk like a penguin. But it's just so big my body is taken along for the ride. And my body is shaken around by my butt. So, then my hitbox gets misaligned so i start banging into things. Like i think i can get through here, but my butt goes BOOM! And you might think it hurst and that's that but my butt is so much like a cushion but it bounces and sends me flying. I think ...it's like that, its just that bouncy it has its own hitbox. Then there's what happens in bed. You might not understand because you're boys, but when a woman with a butt as big as mine goes to bed, when i lay down my butt is so big my hips start floating. Understand? """)
 
