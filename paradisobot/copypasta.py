@@ -14,8 +14,8 @@ def copypasta(cp_name):
     """
 
     try:
-        cp = open(os.path.join(os.path.dirname(__file__), 'copypastas/{}.txt'.format(cp_name.strip())), 'r')
-
+        cp = open(os.path.join(os.path.dirname(__file__), 
+                  'copypastas/{}.txt'.format(cp_name.strip())), 'r')
         return cp.read()
     except IOError:
         return "Copypasta does not exist"
