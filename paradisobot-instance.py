@@ -18,7 +18,9 @@ async def on_message(message):
         if message.reference is None:
             await message.channel.send(paradisobot.pekofy(""))
         else :
-            await message.channel.send(paradisobot.pekofy(message.reference.content))
+            channelr = client.get_channel(message.reference.channel_id)
+            messager = await channelr.fetch_message(message.reference.message_id)
+            await message.channel.send(paradisobot.pekofy(messager.content))
 
 if os.environ.get("DISCORD_API_KEY"):
     client.run(os.environ.get("DISCORD_API_KEY"))

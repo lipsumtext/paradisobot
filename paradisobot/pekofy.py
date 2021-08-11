@@ -25,7 +25,7 @@ def pekofy(words):
                 while i[a]==' ':
                     a=a-1
                 a=-(a+1)
-                pekofied_list.append(i.strip(" ")+" peko"+" "*a)
+                pekofied_list.append(i.rstrip(" ")+" peko"+" "*a)
         peko = ''.join(pekofied_list)
         return peko
     else:
