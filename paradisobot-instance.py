@@ -1,5 +1,6 @@
 import discord
 import paradisobot
+import os
 
 client = discord.Client()
 
@@ -14,5 +15,8 @@ async def on_message(message):
         keyword = message.content.split(' ')[2]
         await message.channel.send(paradisobot.copypasta(keyword))
 
-with open("key.txt") as keyfile:
-    client.run(keyfile.read())
+if os.environ.get("DISCORD_API_KEY"):
+    client.run(os.environ.get("DISCORD_API_KEY"))
+else :
+    with open("key.txt") as keyfile:
+        client.run(keyfile.read())
