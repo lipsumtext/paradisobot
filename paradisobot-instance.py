@@ -14,6 +14,11 @@ async def on_message(message):
     if message.content.startswith('/para cp'):
         keyword = message.content.split(' ')[2]
         await message.channel.send(paradisobot.copypasta(keyword))
+    if message.content.startswith('/para pekofy'):
+        if message.reference is None:
+            await message.channel.send(paradisobot.pekofy(""))
+        else :
+            await message.channel.send(paradisobot.pekofy(message.reference.content))
 
 if os.environ.get("DISCORD_API_KEY"):
     client.run(os.environ.get("DISCORD_API_KEY"))
