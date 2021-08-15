@@ -1,5 +1,5 @@
 /para help
 /para hello
 /para cp or /para
-    [amogus, amoguscock,fubuki,glasses,help,laro,marineass,marinebutt,navyseals]
+    [amogus, amoguscock, fubuki, glasses, help, laro, marineass, marinebutt, navyseals]
 Reply to any message with /para pekofy to pekofy the message.
