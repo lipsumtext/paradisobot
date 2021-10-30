@@ -1,32 +1,27 @@
 import discord
+from discord.ext import commands
 import paradisobot
 import os
 
-client = discord.Client()
+client = commands.Bot(command_prefix='/para ', help_command=None)
 
-prefix = '/para'
+@client.command(name="hello")
+async def _hello(ctx):
+    await ctx.send('Hello!')
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+@client.command(name="help")
+async def _help(ctx):
+    await ctx.send(paradisobot.copypasta("help"))
 
-    if message.content.startswith(prefix+' hello'):
-        await message.channel.send('Hello!')
-    elif message.content.startswith(prefix+' cp'):
-        keyword = message.content.split(' ')[2]
-        await message.channel.send(paradisobot.copypasta(keyword))
-    elif message.content.startswith(prefix+' pekofy'):
-        if message.reference is None:
-            await message.channel.send(paradisobot.pekofy(""))
-        else :
-            channelr = client.get_channel(message.reference.channel_id)
-            messager = await channelr.fetch_message(message.reference.message_id)
-            await message.channel.send(paradisobot.pekofy(messager.content))
-    else: # this also implies /para help, help is implemented as a copypasta
-        if message.content.startswith(prefix):
-            keyword = message.content.split(' ')[1]
-            await message.channel.send(paradisobot.copypasta(keyword))
+@client.command(name="cp")
+async def _cp(ctx, arg):
+    await ctx.send(paradisobot.copypasta(arg))
+
+@client.command(name="pekofy")
+async def _pekofy(ctx):
+    channelr = client.get_channel(ctx.message.reference.channel_id)
+    messager = await channelr.fetch_message(ctx.message.reference.message_id)
+    await ctx.send(paradisobot.pekofy(messager.content))
 
 if os.environ.get("DISCORD_API_KEY"):
     client.run(os.environ.get("DISCORD_API_KEY"))
