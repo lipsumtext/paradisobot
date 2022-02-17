@@ -131,3 +131,4 @@ dmypy.json
 # Discord tokens
 key.txt
 paradisobot/owm_api.txt
+owm_api.txt
