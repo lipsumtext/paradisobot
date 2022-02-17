@@ -16,9 +16,10 @@ def weather(city):
         ctemp = w.temperature('celsius')
         ftemp = w.temperature('fahrenheit')
         temp = ('Temperature: {}\u00b0C / {}\u00b0F ({}\u00b0C max / ' + 
-                '{}\u00b0 min)').format(ctemp['temp'], ftemp['temp'], ctemp['temp_max'], ctemp['temp_min'])
+                '{}\u00b0C min)').format(ctemp['temp'], ftemp['temp'], ctemp['temp_max'], ctemp['temp_min'])
         winds = 'Winds: {} m/s (from {}\u00b0)'.format(w.wind()['speed'], w.wind()['deg'])
-        return location + '\n\n' + status + '\n' + temp + '\n' + winds
+        humidity = 'Humidity: {}%'.format(w.humidity)
+        return '{}\n\n{}\n{}\n{}\n{}'.format(location, status, temp, winds, humidity)
     except exceptions.NotFoundError:
         return "Location not found"
 
