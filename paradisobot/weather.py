@@ -12,11 +12,13 @@ def weather(city):
         obs = mgr.weather_at_place(city)
         w = obs.weather
         location = 'Weather at {}, {} right now: '.format(obs.location.name, obs.location.country)
+        status = 'Status: {}'.format(w.detailed_status.title())
         ctemp = w.temperature('celsius')
         ftemp = w.temperature('fahrenheit')
-        temp = ('Temperature: {}\u00b0C / {}\u00b0F ({}\u00b0C max /' + 
+        temp = ('Temperature: {}\u00b0C / {}\u00b0F ({}\u00b0C max / ' + 
                 '{}\u00b0 min)').format(ctemp['temp'], ftemp['temp'], ctemp['temp_max'], ctemp['temp_min'])
-        return location + '\n' + temp
+        winds = 'Winds: {} m/s (from {}\u00b0)'.format(w.wind()['speed'], w.wind()['deg'])
+        return location + '\n\n' + status + '\n' + temp + '\n' + winds
     except exceptions.NotFoundError:
         return "Location not found"
 
