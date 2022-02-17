@@ -3,3 +3,4 @@
 /para pekofy - Reply to any message with to pekofy the message. Without a reply-to, just pekoes.
 /para cp or /para - Prints a copypasta
     [amogus, amoguscock, fubuki, glasses, help, laro, marineass, marinebutt, navyseals]
+/para wholesome - A wholesome six digits to brighten up your day :)
