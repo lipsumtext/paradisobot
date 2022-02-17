@@ -1,12 +1,22 @@
 from pyowm import OWM
+from pyowm.commons import exceptions 
+from pyowm.utils import timestamps
 
 with open('owm_api.txt') as owm_api:
     api_key = owm_api.read().strip()
     owm = OWM(api_key)
+
 mgr = owm.weather_manager()
 
-obs = mgr.weather_at_place('diliman')
-w = obs.weather
+def weather(city):
+    try:
+        obs = mgr.weather_at_place(city)
+        w = obs.weather
+        location = 'Weather at {}, {}: '.format(obs.location.name, obs.location.country)
+        return location
+    except exceptions.NotFoundError:
+        return "Location not found"
 
-print(w.detailed_status, w.temperature('celsius'), w.wind(), obs.location.name, obs.location.country)
+print(weather('adnKmmeci'))
+# print(w.detailed_status, w.temperature('celsius'), w.wind(), obs.location.name, obs.location.country)
 
