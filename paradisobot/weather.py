@@ -1,7 +1,9 @@
 from pyowm import OWM
 from pyowm.commons import exceptions 
+import os
 
-with open('owm_api.txt', 'r') as owm_api:
+owm_api_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+with open(owm_api_dir + '/owm_api.txt', 'r') as owm_api:
     api_key = owm_api.read().strip()
     owm = OWM(api_key)
 
