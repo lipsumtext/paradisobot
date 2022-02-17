@@ -1,6 +1,5 @@
 from pyowm import OWM
 from pyowm.commons import exceptions 
-from pyowm.utils import timestamps
 
 with open('owm_api.txt') as owm_api:
     api_key = owm_api.read().strip()
