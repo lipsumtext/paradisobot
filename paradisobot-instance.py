@@ -17,6 +17,10 @@ async def _help(ctx):
 async def _cp(ctx, arg):
     await ctx.send(paradisobot.copypasta(arg))
 
+@client.command(name="wholesome")
+async def _wholesome(ctx):
+	await ctx.send(paradisobot.wholesome())
+
 @client.command(name="pekofy")
 async def _pekofy(ctx):
     channelr = client.get_channel(ctx.message.reference.channel_id)
