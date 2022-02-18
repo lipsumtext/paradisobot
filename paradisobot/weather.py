@@ -15,9 +15,10 @@ def weather(api_key, city):
     except IndexError:
         return 'Location not found'
 
-
+'''
 owm_api_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 with open(owm_api_dir + '/owm_api.txt', 'r') as owm_api:
     api_key = owm_api.read().strip()
     # owm = OWM(api_key)
 print(weather(api_key, 'manila'))
+'''
