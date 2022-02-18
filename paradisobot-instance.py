@@ -28,11 +28,11 @@ if os.environ.get("OWM_API_KEY"):
     owm_api = os.environ.get("OWM_API_KEY")
 else:    
     with open("owm_api.txt", "r") as api_txt:
-        owm_api = api_txt
+        owm_api = api_txt.read()
 
 @client.command(name="weather")
-async def _weather(ctx, arg):
-    await ctx.send(paradisobot.weather(owm_api, arg))
+async def _weather(ctx, *args):
+    await ctx.send(paradisobot.weather(owm_api, ' '.join(args)))
 
 if os.environ.get("DISCORD_API_KEY"):
     client.run(os.environ.get("DISCORD_API_KEY"))
