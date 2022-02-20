@@ -15,7 +15,7 @@ def wholesome(tag):
             return "Tag not found :("
 
     response = "Random Wholesome Hentai to brighten up your day: \n"
-    response += "Wholesome Hentai #" + str(doujin["title"]) + "\n"
+    response += "Wholesome Hentai #" + str(doujin["id"]) + "\n"
     response += doujin["title"] + " by " + doujin["author"] + "\n"
     response += "Parody: " + doujin["parody"] + "\n"
     response += "Tags: " + " ".join(doujin["tags"]) + "\n"
