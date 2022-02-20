@@ -18,8 +18,8 @@ async def _cp(ctx, arg):
     await ctx.send(paradisobot.copypasta(arg))
 
 @client.command(name="wholesome")
-async def _wholesome(ctx):
-	await ctx.send(paradisobot.wholesome())
+async def _wholesome(ctx, *args):
+	await ctx.send(paradisobot.wholesome(' '.join(args)))
 
 @client.command(name="pekofy")
 async def _pekofy(ctx):
